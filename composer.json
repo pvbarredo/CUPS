@@ -1,0 +1,20 @@
+{
+    "name": "audizz/pevb-cups",
+    "description": "This repository is a CUPS PHP wrapper that can be imported in laravel 5.5",
+    "authors": [
+        {
+            "name": "pvbarredo",
+            "email": "pvbarredo@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+	    "classmap": [
+	        "database"
+	    ],
+	    "psr-4": {
+	        "App\\": "app/",
+	        "Devdojo\\Calculator\\": "packages/devdojo/calculator/src"
+	    }
+	}
+}
