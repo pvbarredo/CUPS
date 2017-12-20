@@ -1,6 +1,6 @@
 <?php
 
-namespace Audizz\pevb-CUPS;
+namespace Pvbarredo\CUPS;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;

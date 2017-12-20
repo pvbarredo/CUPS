@@ -1,6 +1,6 @@
 <?php
 
-namespace Audizz\pevb-CUPS;
+namespace Pvbarredo\CUPS;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -23,6 +23,6 @@ class CupsServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->make('Audizz\pevb-CUPS\CupsController');
+        $this->app->make('Pvbarredo\CUPS\CupsController');
     }
 }

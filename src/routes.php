@@ -1,4 +1,4 @@
 <?php
 
 
-Route::get('cups/getPrinters', 'Audizz\pevb-CUPS\CupsController@getPrinters');
+Route::get('cups/getPrinters', 'Pvbarredo\CUPS\CupsController@getPrinters');
