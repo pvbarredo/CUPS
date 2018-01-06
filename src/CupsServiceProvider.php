@@ -14,6 +14,8 @@ class CupsServiceProvider extends ServiceProvider
     public function boot()
     {
         include __DIR__.'/routes.php';
+        $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+        $loader->alias('Cups', 'Pvbarredo\CUPS\Cups');
     }
 
     /**
