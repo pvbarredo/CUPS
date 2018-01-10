@@ -24,15 +24,15 @@ class Cups
 
     public static function print(){
     	//you can change the printer name here if no env printer variable
-    	$printerName = env('PRINTER', 'Epson_L800_config');
+    	$printerName = env('PRINTER', 'HP_DeskJet_5820_series');
 
     	//sample file
     	$fileName = 'Voucher-4-1.pdf';
     	$filePath = storage_path('public\print\\' . $fileName);
     	
-    	self::runShellCommand('lpr -P ' . $printerName . ' ' . $filePath);
+    	$response = self::runShellCommand('lpr -P ' . $printerName . ' ' . $filePath);
 
-    	return 'Printing';
+    	return $response;
     }
 
     protected static function runShellCommand($command){
