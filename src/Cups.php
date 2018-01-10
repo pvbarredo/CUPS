@@ -9,10 +9,10 @@ class Cups
     	$response = self::runShellCommand('lpstat -p');
     	$printers = [];
 
-    	foreach( $response as $row ) 
+		foreach( $response as $row ) 
 		{
-			preg_match( '/printer\s(.*)\is/', $row, $printer );
-			preg_match( '/is\s(.*)\./', $row, $statusCode );
+        	preg_match( '/printer\s([^\s]+)/', $line, $printer );
+        	preg_match( '/printer\s[^\s]+\s([^\.]+)/', $line, $status_code );
 			if( end( $printer ) ) 
 			{
 				$printers[] = array( 'name' => end( $printer ), 'status' => end( $statusCode ) );
@@ -25,9 +25,12 @@ class Cups
     public static function print(){
     	//you can change the printer name here if no env printer variable
     	$printerName = env('PRINTER', 'Epson_L800_config');
-    	$fileName = '';
+
+    	//sample file
+    	$fileName = 'Voucher-4-1.pdf';
+    	$filePath = storage_path('public\print\\' . $fileName);
     	
-    	self::runShellCommand('lpstat -p');
+    	self::runShellCommand('lpr -P ' . $printerName . ' ' . $filePath);
 
     	return 'Printing';
     }
