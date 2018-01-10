@@ -11,8 +11,8 @@ class Cups
 
 		foreach( $response as $row ) 
 		{
-        	preg_match( '/printer\s([^\s]+)/', $line, $printer );
-        	preg_match( '/printer\s[^\s]+\s([^\.]+)/', $line, $status_code );
+        	preg_match( '/printer\s([^\s]+)/', $row, $printer );
+        	preg_match( '/printer\s[^\s]+\s([^\.]+)/', $row, $status_code );
 			if( end( $printer ) ) 
 			{
 				$printers[] = array( 'name' => end( $printer ), 'status' => end( $statusCode ) );
