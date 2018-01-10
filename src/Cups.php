@@ -28,7 +28,7 @@ class Cups
 
     	//sample file
     	$fileName = 'Voucher-4-1.pdf';
-    	$filePath = storage_path('public\print\\' . $fileName);
+    	$filePath = storage_path('app/public/print/' . $fileName);
     	
     	$response = self::runShellCommand('lpr -P ' . $printerName . ' ' . $filePath);
 
